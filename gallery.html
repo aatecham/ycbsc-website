@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Yarraville Club Billiards and Snooker Club</title>
+    <meta name="description" content="Photo gallery from Yarraville Club Billiards and Snooker Club sessions and events.">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Yarraville Club Billiards &amp; Snooker</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+        <nav class="site-nav" id="siteNav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Gallery</h1>
+        <p class="muted">Replace these sample images with your own photos in `assets/images/gallery/`.</p>
+      </header>
+
+      <section class="section gallery-grid">
+        <button class="gallery-trigger" data-image="https://images.unsplash.com/photo-1552318965-6e6be7484ada?auto=format&fit=crop&w=1200&q=80" data-alt="Snooker table setup">
+          <img src="https://images.unsplash.com/photo-1552318965-6e6be7484ada?auto=format&fit=crop&w=600&q=70" alt="Snooker table setup" loading="lazy">
+        </button>
+        <button class="gallery-trigger" data-image="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=1200&q=80" data-alt="Cue and balls closeup">
+          <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?auto=format&fit=crop&w=600&q=70" alt="Cue and balls closeup" loading="lazy">
+        </button>
+        <button class="gallery-trigger" data-image="https://images.unsplash.com/photo-1529480780361-c8cb81eb5735?auto=format&fit=crop&w=1200&q=80" data-alt="Billiards room">
+          <img src="https://images.unsplash.com/photo-1529480780361-c8cb81eb5735?auto=format&fit=crop&w=600&q=70" alt="Billiards room" loading="lazy">
+        </button>
+        <button class="gallery-trigger" data-image="https://images.unsplash.com/photo-1561489396-888724a1543d?auto=format&fit=crop&w=1200&q=80" data-alt="Snooker balls on table">
+          <img src="https://images.unsplash.com/photo-1561489396-888724a1543d?auto=format&fit=crop&w=600&q=70" alt="Snooker balls on table" loading="lazy">
+        </button>
+      </section>
+
+      <div class="lightbox" id="lightbox" aria-hidden="true">
+        <button id="lightboxClose" type="button" aria-label="Close image">Close</button>
+        <img id="lightboxImage" src="" alt="">
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><h3>Yarraville Club Billiards &amp; Snooker Club</h3></div>
+        <div><p><a href="events.html">Events</a></p><p><a href="contact.html">Contact</a></p></div>
+        <div><p>Email: ycbsc@yarravilleclub.com.au</p><p>Phone: 03 9689 6033</p></div>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>

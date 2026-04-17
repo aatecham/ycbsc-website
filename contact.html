@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact and Booking | Yarraville Club Billiards and Snooker Club</title>
+    <meta name="description" content="Contact Yarraville Club Billiards and Snooker Club for enquiries, membership, and booking requests.">
+    <link rel="stylesheet" href="styles/main.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">Yarraville Club Billiards &amp; Snooker</a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="siteNav">Menu</button>
+        <nav class="site-nav" id="siteNav" aria-label="Primary">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="events.html">Events</a></li>
+            <li><a href="news.html">News</a></li>
+            <li><a href="sponsors.html">Sponsors</a></li>
+            <li><a href="contact.html" aria-current="page">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <header class="page-header">
+        <h1>Contact and Booking Enquiry</h1>
+        <p class="muted">For bookings and general enquiries, use the form below.</p>
+      </header>
+
+      <section class="section two-col">
+        <div class="card">
+          <h2>Club Contact</h2>
+          <p><strong>Email:</strong> ycbsc@yarravilleclub.com.au</p>
+          <p><strong>Phone:</strong> 03 9689 6033</p>
+          <p><strong>Address:</strong> 175D Stephen Street, Yarraville VIC 3013</p>
+          <p class="muted">For urgent enquiries, please call during opening hours.</p>
+        </div>
+
+        <form id="contactForm" action="https://formspree.io/f/your_form_id" method="POST">
+          <h2>Send an Enquiry</h2>
+          <p class="muted">Replace the form action URL with your own Formspree (or similar) endpoint.</p>
+
+          <label for="name">Full Name</label>
+          <input id="name" name="name" type="text" required>
+
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+
+          <label for="phone">Phone</label>
+          <input id="phone" name="phone" type="tel">
+
+          <label for="enquiryType">Enquiry Type</label>
+          <select id="enquiryType" name="enquiryType" required>
+            <option value="">Select one</option>
+            <option>Membership</option>
+            <option>Booking</option>
+            <option>Event</option>
+            <option>General</option>
+          </select>
+
+          <label for="message">Message</label>
+          <textarea id="message" name="message" required></textarea>
+
+          <p>
+            <button class="btn btn-primary" type="submit">Send Enquiry</button>
+          </p>
+          <p class="muted" id="submitNotice" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div><h3>Yarraville Club Billiards &amp; Snooker Club</h3></div>
+        <div><p><a href="membership.html">Membership</a></p><p><a href="events.html">Events</a></p></div>
+        <div><p>Email: ycbsc@yarravilleclub.com.au</p><p>Phone: 03 9689 6033</p></div>
+      </div>
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
