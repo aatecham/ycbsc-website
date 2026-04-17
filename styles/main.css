@@ -30,6 +30,10 @@ body {
   line-height: 1.6;
 }
 
+body.splash-active {
+  overflow: hidden;
+}
+
 a {
   color: var(--color-primary-accent);
   text-decoration: none;
@@ -234,6 +238,42 @@ img {
   font-size: 1rem;
   padding: 0.45rem 0.7rem;
   cursor: pointer;
+}
+
+.splash-screen {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 59, 44, 0.96);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  opacity: 1;
+  transition: opacity 0.35s ease;
+}
+
+.splash-screen.is-fading {
+  opacity: 0;
+}
+
+.splash-screen__content {
+  text-align: center;
+  color: #fff;
+  padding: 1rem;
+}
+
+.splash-screen__logo {
+  width: min(280px, 70vw);
+  max-height: 40vh;
+  object-fit: contain;
+  margin: 0 auto 0.85rem;
+  filter: drop-shadow(0 12px 24px rgba(0, 0, 0, 0.35));
+}
+
+.splash-screen__title {
+  margin: 0;
+  font-size: clamp(1.1rem, 2.8vw, 1.55rem);
+  letter-spacing: 0.02em;
 }
 
 form {

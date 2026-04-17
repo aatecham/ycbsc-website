@@ -1,6 +1,42 @@
 const navToggle = document.querySelector(".nav-toggle");
 const siteNav = document.querySelector("#siteNav");
 
+const initializeSplashScreen = () => {
+  const splashStorageKey = "ycbscSplashSeen";
+  const hasSeenSplash = sessionStorage.getItem(splashStorageKey) === "true";
+  if (hasSeenSplash) return;
+
+  const splash = document.createElement("div");
+  splash.className = "splash-screen";
+  splash.setAttribute("role", "dialog");
+  splash.setAttribute("aria-label", "Welcome screen");
+  splash.innerHTML = `
+    <div class="splash-screen__content">
+      <img
+        class="splash-screen__logo"
+        src="assets/images/sponsors/yarraville-club.png"
+        alt="Yarraville Club logo"
+      >
+      <p class="splash-screen__title">Yarraville Club Billiards &amp; Snooker</p>
+    </div>
+  `;
+
+  document.body.classList.add("splash-active");
+  document.body.appendChild(splash);
+  sessionStorage.setItem(splashStorageKey, "true");
+
+  window.setTimeout(() => {
+    splash.classList.add("is-fading");
+  }, 2800);
+
+  window.setTimeout(() => {
+    splash.remove();
+    document.body.classList.remove("splash-active");
+  }, 3600);
+};
+
+initializeSplashScreen();
+
 if (navToggle && siteNav) {
   navToggle.addEventListener("click", () => {
     const isOpen = siteNav.classList.toggle("is-open");
