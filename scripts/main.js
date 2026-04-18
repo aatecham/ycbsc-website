@@ -17,7 +17,7 @@ const initializeSplashScreen = () => {
         src="assets/images/sponsors/yarraville-club.png"
         alt="Yarraville Club logo"
       >
-      <p class="splash-screen__title">Yarraville Club Billiards &amp; Snooker</p>
+      <p class="splash-screen__title">Billiards and Snooker Club</p>
     </div>
   `;
 
