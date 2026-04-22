@@ -6,33 +6,73 @@ const initializeSplashScreen = () => {
   const hasSeenSplash = sessionStorage.getItem(splashStorageKey) === "true";
   if (hasSeenSplash) return;
 
-  const splash = document.createElement("div");
-  splash.className = "splash-screen";
-  splash.setAttribute("role", "dialog");
-  splash.setAttribute("aria-label", "Welcome screen");
-  splash.innerHTML = `
-    <div class="splash-screen__content">
+  const splashFadeDelayMs = 2800;
+  const splashTotalDurationMs = 3600;
+  const splashFadeWindowMs = splashTotalDurationMs - splashFadeDelayMs;
+
+  const showSplash = ({
+    ariaLabel,
+    title,
+    logoSrc = "",
+    logoAlt = "",
+    extraClass = "",
+    durationMs = splashTotalDurationMs,
+    onComplete,
+  }) => {
+    const splash = document.createElement("div");
+    splash.className = `splash-screen ${extraClass}`.trim();
+    splash.setAttribute("role", "dialog");
+    splash.setAttribute("aria-label", ariaLabel);
+
+    const logoMarkup = logoSrc
+      ? `
       <img
         class="splash-screen__logo"
-        src="assets/images/sponsors/yarraville-club.png"
-        alt="Yarraville Club logo"
+        src="${logoSrc}"
+        alt="${logoAlt}"
       >
-      <p class="splash-screen__title">Billiards and Snooker Club</p>
-    </div>
-  `;
+    `
+      : "";
+
+    splash.innerHTML = `
+      <div class="splash-screen__content">
+        ${logoMarkup}
+        <p class="splash-screen__title">${title}</p>
+      </div>
+    `;
+
+    document.body.appendChild(splash);
+
+    window.setTimeout(() => {
+      splash.classList.add("is-fading");
+    }, Math.max(0, durationMs - splashFadeWindowMs));
+
+    window.setTimeout(() => {
+      splash.remove();
+      if (typeof onComplete === "function") onComplete();
+    }, durationMs);
+  };
 
   document.body.classList.add("splash-active");
-  document.body.appendChild(splash);
   sessionStorage.setItem(splashStorageKey, "true");
 
-  window.setTimeout(() => {
-    splash.classList.add("is-fading");
-  }, 2800);
-
-  window.setTimeout(() => {
-    splash.remove();
-    document.body.classList.remove("splash-active");
-  }, 3600);
+  showSplash({
+    ariaLabel: "Welcome screen",
+    title: "Billiards and Snooker Club",
+    logoSrc: "assets/images/sponsors/yarraville-club.png",
+    logoAlt: "Yarraville Club logo",
+    onComplete: () => {
+      showSplash({
+        ariaLabel: "Championship announcement",
+        title: "Limited spots are available for Lance Pannell championship",
+        extraClass: "splash-screen--announcement",
+        durationMs: splashTotalDurationMs * 2,
+        onComplete: () => {
+          document.body.classList.remove("splash-active");
+        },
+      });
+    },
+  });
 };
 
 initializeSplashScreen();
