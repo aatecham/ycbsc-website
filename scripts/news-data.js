@@ -1,5 +1,18 @@
 window.NEWS_ITEMS = [
   {
+    date: "2026-04-22",
+    title: "Lance Pannell Snooker Championship 2026",
+    summary:
+      "The Lance Pannell Snooker Championship runs from Saturday 6 June to Monday 8 June 2026, with round robin matches across Melbourne and $8,300 prize money (subject to entries).",
+    content: [
+      "Dates: Saturday 6 June to Monday 8 June 2026.",
+      "Saturday round robin matches are played at multiple venues in Melbourne.",
+      "Prize Money: $8,300.00 (subject to number of entries).",
+      "Enter via VBSA at vbsa.org.au/vbsa_shop/shop_cart.php.",
+      "National ranking dress code applies. Entries close Friday 29 May 2026.",
+    ],
+  },
+  {
     date: "2026-04-20",
     title: "Latest Pennent Reviews: Cannon Blast Sinks Reapers",
     summary:
