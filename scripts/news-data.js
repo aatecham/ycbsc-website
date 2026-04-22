@@ -2,6 +2,8 @@ window.NEWS_ITEMS = [
   {
     date: "2026-04-22",
     title: "Lance Pannell Snooker Championship 2026",
+    image: "assets/images/news/lance-pannell-championship-2026.jpg",
+    imageAlt: "Lance Pannell Snooker Championship 2026 tournament poster",
     summary:
       "The Lance Pannell Snooker Championship runs from Saturday 6 June to Monday 8 June 2026, with round robin matches across Melbourne and $8,300 prize money (subject to entries).",
     content: [
